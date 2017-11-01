@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+
+</html>
+<script>
+const myPromise = new Promise((resolve, reject) => {
+    //console.log()
+    setTimeout(
+        () =>
+        resolve("Hello world"), 1000)
+    setTimeout(
+        () => {
+            reject("Err...")
+        }, 1500)
+})
+// console.log(myPromise)
+setTimeout(() => {
+
+    console.log(myPromise)
+}, 1000)
+myPromise.then(
+	(value) => { 
+		//throw new Error("错误"); 
+		console.log("执行成功" + value)
+	}, 
+	(error) => {    console.log("Err" + error)}
+).catch((error)=>{
+	//console.log(error)
+})
+// 两种错误处理
+// 上面一种 如果 then的第一个方法中有错误 则捕获不到 后面一种可以捕获到 一般用第两种
+
+
+Promise.all([myPromise1,myPromise2])
+	.then((value)=>{})
+	.catch((error)=>{})
+
+Promise.race([myPromise1,myPromise2])	
+	.then((value)=>{})
+	.catch((error)=>{})
+
+// race 只要有一个成功  失败也算完成
+</script>

@@ -9,7 +9,7 @@ module.exports={
   output:{
     path:path.resolve(__dirname ,"./dist"),
     filename:"js/[name].js",
-    publicPath: "/"
+    publicPath: "./"
   },
   module:{
     rules:[
@@ -35,7 +35,9 @@ module.exports={
       },
       {
         test: /\.scss$/,
-        use:ExtractTextPlugin.extract([
+        use:ExtractTextPlugin.extract({
+          publicPath:"./../", //重置掉publicPath 采用相对路径
+          use:[
           // {生产环境 需要CSS单独出来
           //   loader:"style-loader"
           // },
@@ -44,16 +46,26 @@ module.exports={
             options: { minimize: true }
           },
           {
+            loader: 'postcss-loader',
+            options: {
+              config: {
+                path: './postcss.config.js'
+              },
+              sourceMap: false
+            }
+          },
+          {
             loader:"sass-loader"
           }
-        ])
+        ]
+      })
       },
       {
         test: /\.css$/,
         use:[
           {
             loader:"style-loader"
-          },
+          },          
           {
             loader:"css-loader",
             options: { minimize: true }
@@ -62,13 +74,47 @@ module.exports={
       },
       {
         test: /\.(png|jpg|jpeg|gif|svg)$/i,
-        use:{
-          loader:"url-loader",
-          options:{
-              limit:1000,
-              name:"images/[name].[ext]"
-          }
-        }
+        use:[
+          'file-loader',
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              bypassOnDebug: true,
+            },
+          },
+        /*
+          {
+            loader:"url-loader",
+            options:{
+                limit:1000,
+                name:"images/[name].[ext]"
+            }
+          },
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              mozjpeg: {
+                progressive: true,
+                quality: 65
+              },
+              // optipng.enabled: false will disable optipng
+              optipng: {
+                enabled: false,
+              },
+              pngquant: {
+                quality: '65-90',
+                speed: 4
+              },
+              gifsicle: {
+                interlaced: false,
+              },
+              // the webp option will enable WEBP
+              webp: {
+                quality: 75
+              }
+            }
+          }*/
+        ]
       }
     ]
   },

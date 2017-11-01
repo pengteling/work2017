@@ -1,0 +1,53 @@
+@mixin abscenter($width,$height,$top,$url:null){
+	position:absolute;
+	width:$width;
+	height:$height;
+	left:50%;
+	margin-left: -$width/2;
+	top:$top;
+	@if $url{
+		background:url($url);
+		background-size:100% 100%;
+	}
+}
+@mixin abscenterb($width,$height,$top,$url:null){
+	position:absolute;
+	width:$width;
+	height:$height;
+	left:50%;
+	margin-left: -$width/2;
+	bottom:$top;
+	@if $url{
+		background:url($url);
+		background-size:100% 100%;
+	}
+}
+@mixin whb($width,$height,$url:null){
+	width:$width;
+	height:$height;
+	@if $url{
+		background:url($url);
+		background-size:100% 100%;
+	}
+}
+@mixin hb($height,$url:null){
+	position:relative;
+	height:$height;
+	@if $url{
+		background:url($url);
+		background-size:100% 100%;
+	}
+}
+@mixin abs($width,$height,$left:null,$top:null,$right:null,$bottom:null,$url:null){
+	position:absolute;
+	width:$width;
+	height:$height;
+	@if $left{left:$left;}
+	@if $top{top:$top;}
+	@if $right{right:$right;}
+	@if $bottom{bottom:$bottom;}	
+	@if $url{
+		background:url($url);
+		background-size:100% 100%;
+	}
+}

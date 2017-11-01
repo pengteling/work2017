@@ -1,0 +1,151 @@
+@charset 'utf-8';
+@import "normalize","mixin","comm";
+@include normalize();
+
+body{
+	max-width:750px;
+	margin:0 auto;
+}
+.header{
+	@include hb(0.98rem,"../images/header.png");
+	.logo{
+		float:left;
+		width: 3rem;
+		height: 100%
+
+	}
+	.tel{
+		float: right;
+		width: 3rem;
+		height: 100%
+	}
+	a{
+		@extend .block;
+	}
+}
+.btn{
+	@include abscenterb(2.82rem,0.7rem,0.72rem);
+	a{
+		@extend .block;
+	}
+}
+.btn-w{
+	@include abscenterb(3.62rem,0.74rem,0.72rem);
+	a{
+		@extend .block;
+	}
+}
+.banner{
+	@include hb(5.15rem,"../images/banner.jpg");	
+}
+.im3{
+	@include hb(7.12rem,"../images/im3.png");
+	overflow:hidden;
+	ul{
+		display: flex;		
+		flex-wrap: wrap;
+		justify-content: space-around;
+		align-content: space-between;
+		height: 3.2rem;
+		margin-top: 2.02rem;
+		li{
+			width: 2rem;
+			height: 1.42rem;
+			a{
+				@extend .block;
+			}
+		}
+	}
+}
+.im4{
+	@include hb(6.86rem,"../images/im4.jpg");
+	margin-bottom: 0.14rem;
+	.btn{
+		bottom: 0.6rem;
+	}
+}
+.im6{
+	@include hb(3.86rem,"../images/im6.jpg");
+	margin-bottom: 0.14rem;
+	.btn{
+		bottom: 0.6rem;
+	}
+}
+.im8{
+	@include hb(12.84rem,"../images/im8.png");
+	overflow:hidden;
+	margin-bottom: 0.14rem;
+	ul{
+		margin-top: 2.12rem;
+		li{
+			width: 6.86rem;
+			height: 2.72rem;
+			margin:0 auto 0.41rem;			
+			a{
+				@extend .block;
+			}
+		}
+	}
+	.btn{
+		bottom: 0.6rem;
+	}
+}
+
+.im9{
+	@include hb(6rem,"../images/im9.png");
+	margin-bottom: 0.14rem;
+	overflow:hidden;
+	ul{
+		display: flex;		
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-content: space-between;
+		
+		height: 6rem;
+		margin: 0 auto 0;
+		li{
+			position:relative;
+			width: 2.45rem;
+			height: 2.97rem;						
+			a{		
+				position: absolute;
+				top: 2.07rem;
+				left: 0.48rem;	
+				width: 1.46rem;
+				height: 0.48rem;				
+			}
+		}
+	}
+	
+}
+.im10{
+	@include hb(3.53rem,"../images/im10.jpg");
+	margin-bottom: 0.98rem;
+	.btn{
+		width: 3rem;
+		bottom: 0.82rem;
+	}
+}
+.footer{
+	
+	width:100%;
+	max-width:750px;
+	@include hb(0.98rem,"../images/footer.png");
+	position:fixed;
+	left:0;
+	right:0;
+	bottom:0;
+	margin:auto;
+	ul{
+		display: flex;
+		justify-content: space-around;
+		height: 100%;
+		li{
+			flex:0 1 20%;
+			a{
+				@extend .block;
+			}
+		}
+	}
+
+}
