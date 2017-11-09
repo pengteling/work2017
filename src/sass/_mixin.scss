@@ -7,7 +7,7 @@
 	top:$top;
 	@if $url{
 		background:url($url);
-		background-size:100% 100%;
+		/* background-size:100% 100%; */
 	}
 }
 @mixin abscenterb($width,$height,$top,$url:null){
@@ -19,7 +19,7 @@
 	bottom:$top;
 	@if $url{
 		background:url($url);
-		background-size:100% 100%;
+		/* background-size:100% 100%; */
 	}
 }
 @mixin whb($width,$height,$url:null){
@@ -27,15 +27,15 @@
 	height:$height;
 	@if $url{
 		background:url($url);
-		background-size:100% 100%;
+		/* background-size:100% 100%; */
 	}
 }
 @mixin hb($height,$url:null){
 	position:relative;
 	height:$height;
 	@if $url{
-		background:url($url);
-		background-size:100% 100%;
+		background:url($url) top center no-repeat;
+		/* background-size:100% 100%; */
 	}
 }
 @mixin abs($width,$height,$left:null,$top:null,$right:null,$bottom:null,$url:null){
@@ -48,6 +48,6 @@
 	@if $bottom{bottom:$bottom;}	
 	@if $url{
 		background:url($url);
-		background-size:100% 100%;
+		/* background-size:100% 100%; */
 	}
 }
