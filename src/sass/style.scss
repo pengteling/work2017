@@ -4,6 +4,9 @@
 
 $acolor:#3b3b3b;
 $red:#f57074;
+body{
+	font-family:"Microsoft YaHei","微软雅黑","黑体","宋体"
+}
 .banner{
 	@include hb(600px,"../images/banner.jpg");
 	.btn{
