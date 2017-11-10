@@ -97,6 +97,12 @@ module.exports={
     new ExtractTextPlugin({
       filename:"css/[name].css",
       allChunks:true
+    }),
+    new webpack.ProvidePlugin({
+     $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery',
+      'window.$': 'jquery',
     })
   ],
   devServer: {
