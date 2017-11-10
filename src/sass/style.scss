@@ -84,12 +84,43 @@ body{
 			@extend .block;
 		}
 	}
+	.content-1{
+		position:absolute;
+		width: 275px;
+		height: 92px;
+		left: 215px;
+		top: 658px;
+		a{
+			@extend .block;
+		}
+	}
+	.content-2{
+		position:absolute;
+		width: 550px;
+		height: 382px;
+		left: 550px;
+		top: 372px;
+		a{
+			@extend .block;
+		}
+	}
 }
 
 .im3{
 	@include hb(1404px,"../images/im3.png");
 	.btn{
 		@include abscenterb(242px,50px,106px);
+		a{
+			@extend .block;
+		}
+	}
+	.content{
+		position:absolute;
+		width: 1100px;
+		height: 278px;
+		left: 50%;
+		margin-left: -550px;
+		top: 905px;
 		a{
 			@extend .block;
 		}
