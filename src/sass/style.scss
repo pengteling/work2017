@@ -2,392 +2,264 @@
 @import "normalize","mixin","comm";
 @include normalize();
 
-$acolor:#3b3b3b;
-$red:#ec6350;
-$white:#fafbf8;
+$blue:#0544ad;
+
 body{
-	font-family:"Microsoft YaHei","微软雅黑","黑体","宋体"
+	max-width:750px;
+	margin:0 auto;
+	font-size:0.2rem;
 }
 .header{
-	height: 100px;
-	background:#18202d;
+	@include hb(1rem,"../images/header.png");
 	.logo{
-		float: left;
-		margin-top: 20px;
+		float:left;
+		width: 3rem;
+		height: 100%
+
 	}
 	.tel{
 		float: right;
-		margin-top: 31px;
+		width: 3rem;
+		height: 100%
+	}
+	a{
+		@extend .block;
 	}
 }
 .banner{
-	overflow:hidden;
-	height: 738px;
-	background:url(../images/banner.jpg) top center no-repeat;
+	@include hb(8.2rem,"../images/banner.jpg");
 	.btns{
-		box-sizing:border-box;
-		margin-top: 534px;
-		padding-left: 63px;
+		display:flex;
+		padding-top: 2.85rem;
+		width: 5.18rem;
+		margin:0 auto;
+		justify-content:space-between;
 		a{
-			float:left;
-			display: inline-block;
-			width: 224px;
-			height: 50px;
-			line-height: 50px;
-			text-align: center;
-			margin-right: 28px;
-			background:#fff;
-			border-radius: 25px;
-			color:#202733;
-			font-size: 18px;
-			&:hover{
+			display: flex;
+			justify-content:center;
+			align-items:center;
+			width: 2.25rem;
+			height:0.56rem;
+			font-size:0.22rem;			
+			&.btn-white{
+				color:$blue;
+				background:url(../images/btn-white.png);
+				background-size:100% 100%;
+			}
+			&.btn-yellow{
 				color:#fff;
-				background:#e94e38;
+				background:url(../images/btn-yellow.png);
+				background-size:100% 100%;
 			}
 		}
-	}
-}
-.footer{
-	height: 385px;
-	background:url(../images/footer.png) top center no-repeat;
-	.main{
-		.about,.contact{
-			position:absolute;
-			width: 180px;
-			height: 42px;
-			left: 335px;
-			top: 154px;
-		}
-		.contact{
-			left: 596px
-		}
-	}
-}
-.im1{
-	@include hb(1110px,"../images/im1.png");
-	.btn{
-		@include abscenterb(242px,50px,110px);
-		a{
-			@extend .block;
-		}
-	}
-}
 
-.im2{
-	@include hb(982px,"../images/im2-bg.jpg");
-	.main{
-		@include hb(982px,"../images/im2.png");
 	}
-	.btn{
-		@include abscenterb(242px,50px,108px);
-		a{
-			@extend .block;
-		}
-	}
-	.content-1{
-		position:absolute;
-		width: 275px;
-		height: 92px;
-		left: 215px;
-		top: 658px;
-		a{
-			@extend .block;
-		}
-	}
-	.content-2{
-		position:absolute;
-		width: 550px;
-		height: 382px;
-		left: 550px;
-		top: 372px;
-		a{
-			@extend .block;
-		}
-	}
-}
+	.table{
+		display:table;
+		position: absolute;
+		width: 6.58rem;
+		left:0;
+		right:0;
+		margin:auto;
+		top:5.9rem;
+		color:#6e8296;
+		.table-row{
+			display:table-row;
+			height:0.62rem;
 
-.im3{
-	@include hb(1404px,"../images/im3.png");
-	.btn{
-		@include abscenterb(242px,50px,106px);
-		a{
-			@extend .block;
-		}
-	}
-	.content{
-		position:absolute;
-		width: 1100px;
-		height: 278px;
-		left: 50%;
-		margin-left: -550px;
-		top: 905px;
-		a{
-			@extend .block;
-		}
-	}
-}
-.im4{
+			.table-item{
+				display:table-cell;
+				vertical-align:middle;
+				text-align:center;
+				&:nth-child(3){
+					width:1.48rem;
+					color:#fff;
+				}
+				i{
+					display: inline-block;
+					width: 0.14rem;
+					height:0.23rem;
+					background:url(../images/ico-username.png);
+					background-size:100% 100%;
+					vertical-align: -0.02rem;
+					margin-right: 0.08rem;
 
-	@include hb(1068px,"../images/im4-bg.jpg");
-	.main{
-		overflow:hidden;
-		@include hb(1068px,"../images/im4.png");
-		background-position: center 108px;
-	}
-	.btn{
-		@include abscenterb(282px,50px,98px);
-		a{
-			@extend .block;
-		}
-	}
-	ul{
-		margin-top: 394px;
-		margin-right: -20px;
-		li{
-			position:relative;
-			float: left;
-			box-sizing:border-box;
-			width: 260px;
-			height: 468px;
-			padding: 10px;
-			margin-right: 20px;
-			background:#fff;
-			.tname{
-				position:absolute;
-				width: 239px;
-				height: 36px;
-				top: 148px;
-				line-height: 36px;
-				background:$red;
-				color: $white;
-				text-align: center;
-				font-size: 18px;
-				font-weight: bold;
+				}
+
 			}
-			.job{
-				font-size: 18px;
-				font-weight: bold
-				;color:#565655;
-				line-height: 70px;
-				text-align: center
-				;
-			}
-			.intro{
-				padding:0 10px;
-				color:#8d8e8e;
-				line-height: 30px;
+			&:nth-child(1){
+				height:0.51rem;
 			}
 		}
+
+
 	}
 }
-.im5{
-	@include hb(860px,"../images/im5-bg.jpg");
-	.im5-tit{
-		@include abscenter(457px,90px,106px,"../images/im5-tit.png");
-	}
-	.person{
-		@include abscenterb(427px,384px,0px,"../images/im5-person.png");
-	}
-	.main{
-		height: 860px;
-		.ask{
-			position:absolute;
-			z-index: 0;
-			width: 216px;
-			height: 128px;
-			box-sizing:border-box;	
-			padding:0 43px;
-			text-align: center;
-			line-height: 128px;
-			font-size: 0;
-			span{
-				display: inline-block;
-				font-size: 18px;
-				line-height: 24px;
-				vertical-align: middle;
-				color: #191e2a;
-			}
-		}
-		
-		.ask-right::before,.ask-left::before{
-			content: "";
-			position:absolute;
-			left: 0;
-			top: 0;
-			z-index: -1;
-
-			width: 216px;
-			height: 148px;
-			
-			background:url(../images/ask-right.png);
-		}
-		.ask-left::before{			
-			background:url(../images/ask-left.png);
-		}
-		
-		.ask-left:hover::after,.ask-right:hover::after{
-			content: url(../images/ask-hover-txt.png);
-			position:absolute;
-			left: 0;
-			top: 0;
-			z-index: 2;
-
-			width: 216px;
-			height: 128px;
-			padding-top: 20px;
-			background:url(../images/ask-left-hover.png);
-		}
-		.ask-right:hover::after{
-			background:url(../images/ask-right-hover.png);
-		}
-		.ask-1{
-			left: 306px;
-			top: 303px;
-		}
-		.ask-2{
-			left: 0px;
-			top: 364px;
-		}
-		.ask-3{
-			left: 148px;
-			top: 535px;
-		}
-		.ask-4{
-			left: 46px;
-			top: 698px;
-		}
-		.ask-5{
-			left: 609px;
-			top: 306px;
-		}
-		.ask-6{
-			left: 920px;
-			top: 365px;
-		}
-		.ask-7{
-			left: 697px;
-			top: 476px;
-		}
-		.ask-8{
-			left: 915px;
-			top: 537px;
-		}
-		.ask-9{
-			left: 882px;
-			top: 712px;
-		}
-	}
-}
-
-.im6{
+.mui{	
+	@include hb(7.99rem,"../images/mui.png");
 	overflow:hidden;
-	@include hb(922px,"../images/im6-bg.jpg");
-	.im6-tit{
-		@include abscenter(653px,155px,84px,"../images/im6-tit.png");
-	}
-	.main{
-		padding-top: 339px;
-	}
-	.hd{
-		position:absolute;
-	}
-	.slider{
-		position: relative;
-		height: 326px;
-	}
-	.prev,.next{
-		position:absolute;
-		z-index: 3;
-		width: 44px;
-		height: 44px;
-		top: 50%;
-		margin-top: -22px;
-		cursor: pointer;
-	}
-	.prev{
-		left: -89px;
-		background:url(../images/arrow-left.png);
-		&:hover{
-			background:url(../images/arrow-left-hover.png);
+	.about{
+		display:flex;
+		justify-content:space-between;
+		flex-wrap:wrap;		
+		width: 4.76rem;
+		height:1.56rem;
+		margin: 3.16rem auto 0;
+		a{
+			display: inline-block;
+			width: 1.98rem;
+			height:0.5rem;
 		}
 	}
-	.next{
-		right: -89px;
-		background:url(../images/arrow-right.png);
-		&:hover{
-			background:url(../images/arrow-right-hover.png);
+	.hotask{
+		position: absolute;
+		top:5.88rem;
+		left:0;
+		right:0;
+
+
+		display:flex;
+		justify-content:space-between;
+		flex-wrap:wrap;		
+		width: 4.94rem;
+		height:1.56rem;
+		margin: auto ;
+
+		a{
+			display: inline-block;
+			width: 2.2rem;
+			height:0.5rem;
 		}
 	}
-	.bd{
+}
+.form{
+	.form-top{
+		@include hb(2.94rem,"../images/form-top.png");
+	}
+	.form-footer{
+		@include hb(1.89rem,"../images/form-footer.png");
+		text-align:center;
+		a{
+			margin-top: 0.66rem;
+			display: inline-block;
+			width: 2.89rem;
+			height:0.52rem;
+
+		}
+	}
+	.form-middle{
+		min-height:7.52rem;
+		background:url(../images/form-middle.png);
+		background-size:100% ;
+		//background-repeat:y-repeat;
 		
-		li{
-			position:relative;
-			.pic{
-				float: left;
-				margin-right: 38px;
-			}
-			.name{
-				font-weight: bold;
-				font-size: 24px;
-				color: $white;
-			}
-			.job{
-				position: absolute
-				;
-				left: 292px;
-				top: 50px;
-				line-height: 32px;
-				padding:0 16px;				
-				background:$red;
-			}
-			.intro{
-				width: 1080px;
-				margin-top: 78px;
-				line-height: 32px;
-				color: $white;
-
-				
-			}
+		dl{
+			width: 6.6rem;
+			margin:0 auto;
+			padding-top: 0.36rem;		
+			padding-bottom: 0.4rem;
+			border-bottom: 0.01rem dashed #e5e5e5;
 		}
-	}
-	.hd{
-		position:absolute;
-		z-index: 5;
-		right: 0;
-		bottom:0;
-
-		ul{
-			li{
-				position:relative;
-				float: left;
-				margin-left: 18px;
-				cursor: pointer;
-				&.on::after{
-						content:"";
-						position:absolute;
-						z-index: 1;
-						left: 0;
-						top: 0;
-						width: 100%;
-						height: 92px;
-						opacity: 0.8;
-						background:url(../images/stu-hover-bg.png);
-					
+		dt{
+				
+			font-size: 0.3rem;
+			line-height:0.56rem;
+			color:#616b76;
+		}
+		dd{
+			display: inline-block;
+			margin-right: 0.48rem;
+			margin-left: 0;
+			line-height:0.46rem;
+			font-size: 0.24rem;
+			color:#aeaeaf;
+			input{
+				display:none;
+				&:checked+label::before{					
+					background:url(../images/ico-checked.png) center center / 100% 100%;
 				}
 			}
+			label::before{
+				content:"";
+				display:inline-block;
+				width: 0.26rem;
+				height:0.28rem;
+				margin-right: 0.08rem;
+				vertical-align:-0.04rem;
+				background:url(../images/ico-check.png) center center / 100% 100%;
+			}
 		}
 	}
-	.btn{
-		@include abscenterb(222px,52px,109px,"../images/im6-btn.png");
-		a{
-			@extend .block;
-			color:$white;
-			line-height: 52px;
-			font-size: 18px;
-		}
-	}
-
 }
-.im7{
-	@include hb(812px,"../images/im7.png");	
+.stu-uicourse{
+	@include hb(12.14rem,"../images/bg-stu-uicourse.jpg");
+	.course{
+		overflow:hidden;
+		@include hb(12.14rem,"../images/bg-stu-uicourse.png");
+		.btns{
+			width: 7.08rem;
+			height:9.67rem;
+			margin:1.96rem auto 0;
+			display:flex;
+			flex-wrap:wrap;
+			justify-content:space-between;
+			align-items:space-between;
+		}
+		a{
+			display:inline-block;
+			width: 3.42rem;
+			height: 3rem;			
+		}
+	}
+}
+.questions{
+	overflow:hidden;
+	@include hb(7.29rem,"../images/questions.png");
+	.btns{
+		width: 6.88rem;
+		height:4.55rem;
+		margin:2.13rem auto 0;
+		a{
+			@extend .block
+		}
+
+	}
+}
+.stu{
+	overflow:hidden;
+	&.stu-1{
+		
+		@include hb(10.03rem,"../images/stu1.png");
+
+	}
+	&.stu-2{
+		
+		@include hb(8.19rem,"../images/stu2.png");
+
+	}
+	.btns{
+		display:flex;
+		justify-content:space-between;
+		position: absolute;
+		left:0;
+		right:0;
+		bottom:0.78rem;
+		width:4.66rem;
+		height:0.5rem;
+		margin:auto;
+		a{
+			width: 2.20rem;
+			height:0.5rem;
+		}
+
+	}
+}
+.methods{
+	@include hb(11.73rem,"../images/methods.png");
+}
+.parter{
+	@include hb(8.38rem,"../images/parter.png");
+}
+.footer{
+	@include hb(3.41rem,"../images/footer.jpg");
 }
