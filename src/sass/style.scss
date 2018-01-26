@@ -54,6 +54,15 @@ body{
 		}
 
 	}
+
+	.scroll{
+		position: absolute;
+		width:100%;
+		top:6.52rem;
+		height:1.13rem;
+		overflow:hidden;		
+	}
+
 	.table{
 		display:table;
 		position: absolute;
@@ -62,6 +71,7 @@ body{
 		right:0;
 		margin:auto;
 		top:5.9rem;
+		
 		color:#6e8296;
 		.table-row{
 			display:table-row;
@@ -71,6 +81,7 @@ body{
 				display:table-cell;
 				vertical-align:middle;
 				text-align:center;
+
 				&:nth-child(3){
 					width:1.48rem;
 					color:#fff;
@@ -91,6 +102,25 @@ body{
 				height:0.51rem;
 			}
 		}
+
+		&.table-scroll{			
+			top:0;
+			// .table-row{
+			// 	position: relative;
+			// 	&::after{
+			// 		content:"";
+			// 		position: absolute;
+			// 		top:0.62rem;
+			// 		left:0;
+			// 		width: 100%;
+			// 		border-bottom: 10px solid #ddd;
+			// 	}
+			// 	border-bottom: 10px solid #ddd;
+			// }
+			.table-item{
+				border-bottom: 0.01rem solid #ddd;
+			}
+		};
 
 
 	}
